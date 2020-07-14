@@ -92,7 +92,7 @@ export default {
       const groupedWordsWithClasses = classes.reduce(reducer, [])
       if (latestIndex < this.sourceText.length - 1) {
         // include last words
-        const finalWords = this.sourceText.substring(latestIndex, this.sourceText.length - 1)
+        const finalWords = this.sourceText.substring(latestIndex, this.sourceText.length)
         return groupedWordsWithClasses.concat([ {word: finalWords, class: null}])
       } else {
         return groupedWordsWithClasses

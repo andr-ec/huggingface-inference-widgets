@@ -27,7 +27,7 @@ export default {
     return {
       inferenceURL: 'https://api-inference.huggingface.co/models/t5-base',
       isLoading: false,
-      sourceText: 'This is a nice hat.',
+      sourceText: 'The Statue of Liberty Enlightening the World was a gift of friendship from the people of France to the United States and is recognized as a universal symbol of freedom and democracy. The Statue of Liberty was dedicated on October 28, 1886. It was designated as a National Monument in 1924.',
       predictionText: ''
     }
   },
