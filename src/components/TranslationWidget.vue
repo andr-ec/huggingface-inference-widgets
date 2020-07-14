@@ -1,39 +1,33 @@
 <template>
-  <div class="box">
-    <div class="media-content">
-      <p class="title is-4">
-        Translation
-      </p>
-      <p class="subtitle is-6">
-        t5-base (English to German)
-      </p>
-      <b-field label="Source Text">
-        <b-input v-model="sourceText" />
-      </b-field>
-      <b-button
-        :loading="isLoading"
-        :type="isLoading ? '': 'is-primary'"
-        @click="onTranslate"
-      >
-        Translate
-      </b-button>
-      <div v-if="predictionText !== ''">
-        <br>
-        <p><b>Prediction Text</b></p>
-        <br>
-        <p>{{ predictionText }}</p>
-      </div>
+  <InferenceWidget
+    v-model="sourceText"
+    title="Translation"
+    subtitle="t5-base (English to German)"
+    button-action="Translate"
+    :is-loading="isLoading"
+    @submit="onTranslate"
+  >
+    <div v-if="predictionText !== ''">
+      <br>
+      <p><b>Prediction Text</b></p>
+      <br>
+      <p>{{ predictionText }}</p>
     </div>
-  </div>
+  </InferenceWidget>
 </template>
 <script>
+import InferenceWidget from "./InferenceWidget.vue";
 import axios from 'axios'
+
 export default {
+  components: {
+    InferenceWidget
+  },
   data() {
     return {
       inferenceURL: 'https://api-inference.huggingface.co/models/t5-base',
       isLoading: false,
-      sourceText: 'My name is Julien and I am an engineer who lives in NYC.',
+      sourceText: 'This is a nice hat.',
       predictionText: ''
     }
   },

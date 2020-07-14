@@ -1,16 +1,21 @@
 <template>
   <div id="app">
+    <!-- <div class="columns"> -->
     <TranslationWidget />
+    <TokenClassificationWidget />
+    <!-- </div> -->
   </div>
 </template>
 
 <script>
 import TranslationWidget from './components/TranslationWidget.vue'
+import TokenClassificationWidget from './components/TokenClassificationWidget.vue'
 
 export default {
   name: 'App',
   components: {
-    TranslationWidget
+    TranslationWidget,
+    TokenClassificationWidget
   }
 }
 </script>
