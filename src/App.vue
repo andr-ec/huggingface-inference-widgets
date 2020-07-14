@@ -2,7 +2,7 @@
   <div id="app">
     <div class="columns">
       <div class="column is-half is-offset-one-quarter">
-        <TranslationWidget class="box-width" />
+        <TranslationWidget />
       </div>
     </div>
     <br>
@@ -10,7 +10,7 @@
     <br>
     <div class="columns">
       <div class="column is-half is-offset-one-quarter">
-        <TokenClassificationWidget class="box-width" />
+        <TokenClassificationWidget />
       </div>
     </div>
   </div>
@@ -39,8 +39,5 @@ export default {
   margin-top: 60px;
   margin-left: 60px;
   margin-right: 60px;
-}
-.box-width {
-  /* width: 600px; */
 }
 </style>
