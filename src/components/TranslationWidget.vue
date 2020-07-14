@@ -5,7 +5,7 @@
         Translation
       </p>
       <p class="subtitle is-6">
-        t5-base
+        t5-base (English to German)
       </p>
       <b-field label="Source Text">
         <b-input v-model="sourceText" />
@@ -17,9 +17,12 @@
       >
         Translate
       </b-button>
-      <br>
-      <br>
-      <p>{{ predictionText }}</p>
+      <div v-if="predictionText !== ''">
+        <br>
+        <p><b>Prediction Text</b></p>
+        <br>
+        <p>{{ predictionText }}</p>
+      </div>
     </div>
   </div>
 </template>
