@@ -1,9 +1,18 @@
 <template>
   <div id="app">
-    <!-- <div class="columns"> -->
-    <TranslationWidget />
-    <TokenClassificationWidget />
-    <!-- </div> -->
+    <div class="columns">
+      <div class="column is-half is-offset-one-quarter">
+        <TranslationWidget class="box-width" />
+      </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div class="columns">
+      <div class="column is-half is-offset-one-quarter">
+        <TokenClassificationWidget class="box-width" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -28,5 +37,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+.box-width {
+  /* width: 600px; */
 }
 </style>
