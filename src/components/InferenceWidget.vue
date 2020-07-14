@@ -11,17 +11,17 @@
         <b-input
           v-model="sourceText"
           type="textarea"
-          @keyup="$emit('update:sourceText', sourceText);"
+          @keyup="$emit('update:sourceText', sourceText)"
         />
       </b-field>
       <b-button
         :loading="isLoading"
-        :type="isLoading ? '': 'is-primary'"
+        :type="isLoading ? '' : 'is-primary'"
         @click="onInference"
       >
         {{ buttonAction }}
       </b-button>
-      <br>
+      <br />
       <slot />
     </div>
   </div>
@@ -30,27 +30,29 @@
 <script>
 export default {
   props: {
-    title: { default: '', type: String},
-    subtitle: { default: '', type: String},
-    buttonAction: { default: '', type: String},
-    value: { default: '', type: String},
+    title: { default: "", type: String },
+    subtitle: { default: "", type: String },
+    buttonAction: { default: "", type: String },
+    value: { default: "", type: String },
     isLoading: Boolean
   },
   computed: {
     // used to allow prop to be mutated
     sourceText: {
-      get() {return this.value},
-      set(sourceText) {this.$emit('input', sourceText)}
+      get() {
+        return this.value;
+      },
+      set(sourceText) {
+        this.$emit("input", sourceText);
+      }
     }
   },
   methods: {
-    onInference: function () {
-      this.$emit('submit')
+    onInference: function() {
+      this.$emit("submit");
     }
   }
-}
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

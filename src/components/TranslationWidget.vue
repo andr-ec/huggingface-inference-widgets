@@ -8,16 +8,16 @@
     @submit="onTranslate"
   >
     <div v-if="predictionText !== ''">
-      <br>
+      <br />
       <p><b>Prediction Text</b></p>
-      <br>
+      <br />
       <p>{{ predictionText }}</p>
     </div>
   </InferenceWidget>
 </template>
 <script>
 import InferenceWidget from "./InferenceWidget.vue";
-import axios from 'axios'
+import axios from "axios";
 
 export default {
   components: {
@@ -25,30 +25,33 @@ export default {
   },
   data() {
     return {
-      inferenceURL: 'https://api-inference.huggingface.co/models/t5-base',
+      inferenceURL: "https://api-inference.huggingface.co/models/t5-base",
       isLoading: false,
-      sourceText: 'The Statue of Liberty Enlightening the World was a gift of friendship from the people of France to the United States and is recognized as a universal symbol of freedom and democracy. The Statue of Liberty was dedicated on October 28, 1886. It was designated as a National Monument in 1924.',
-      predictionText: ''
-    }
+      sourceText:
+        "The Statue of Liberty Enlightening the World was a gift of friendship from the people of France to the United States and is recognized as a universal symbol of freedom and democracy. The Statue of Liberty was dedicated on October 28, 1886. It was designated as a National Monument in 1924.",
+      predictionText: ""
+    };
   },
   methods: {
     onTranslate: async function() {
-      this.predictionText = ''
-      this.isLoading = true
+      this.predictionText = "";
+      this.isLoading = true;
       try {
-        const response = await axios.post(this.inferenceURL, JSON.stringify(this.sourceText))
-        this.predictionText = response.data[0].translation_text
+        const response = await axios.post(
+          this.inferenceURL,
+          JSON.stringify(this.sourceText)
+        );
+        this.predictionText = response.data[0].translation_text;
       } catch (error) {
         this.$buefy.toast.open({
           duration: 5000,
           message: `Translation failed, please try again.`,
-          position: 'is-bottom',
-          type: 'is-danger'
-          })
+          position: "is-bottom",
+          type: "is-danger"
+        });
       }
-      this.isLoading = false
-
+      this.isLoading = false;
     }
   }
-}
+};
 </script>

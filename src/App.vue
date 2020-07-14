@@ -5,9 +5,9 @@
         <TranslationWidget />
       </div>
     </div>
-    <br>
-    <hr>
-    <br>
+    <br />
+    <hr />
+    <br />
     <div class="columns">
       <div class="column is-half is-offset-one-quarter">
         <TokenClassificationWidget />
@@ -17,16 +17,16 @@
 </template>
 
 <script>
-import TranslationWidget from './components/TranslationWidget.vue'
-import TokenClassificationWidget from './components/TokenClassificationWidget.vue'
+import TranslationWidget from "./components/TranslationWidget.vue";
+import TokenClassificationWidget from "./components/TokenClassificationWidget.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     TranslationWidget,
     TokenClassificationWidget
   }
-}
+};
 </script>
 
 <style>

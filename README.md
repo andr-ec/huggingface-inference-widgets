@@ -1,5 +1,11 @@
 # huggingface-inference-widgets
 
+## quick start
+```
+yarn install
+yarn run serve
+```
+
 ## Project setup
 ```
 yarn install
@@ -29,7 +35,7 @@ npm run build
 
 ### Lints and fixes files
 ```
-yarn run build
+yarn run lint
 ```
 or
 ```
