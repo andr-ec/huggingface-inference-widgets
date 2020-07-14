@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <TranslationWidget msg="Welcome to Your Vue.js App"/>
+    <TranslationWidget />
   </div>
 </template>
 
 <script>
-import TranslationWidget from './components/HelloWorld.vue'
+import TranslationWidget from './components/TranslationWidget.vue'
 
 export default {
   name: 'App',
